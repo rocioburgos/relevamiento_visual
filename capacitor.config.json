@@ -1,6 +1,6 @@
 {
-	"appId": "io.ionic.starter",
-	"appName": "relevamiento_visual",
-	"webDir": "www",
-	"bundledWebRuntime": false
+  "appId": "com.relevamientovisual.app",
+  "appName": "Relevamiento visual",
+  "webDir": "www",
+  "bundledWebRuntime": false
 }
