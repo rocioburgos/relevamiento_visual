@@ -7,27 +7,34 @@
             <h5 class="card-title text-center mb-5 fw-light fs-5">Ingreso</h5>
             <form>
               <div class="form-floating mb-3">
-                <input type="email" [(ngModel)]='email' class="form-control" placeholder="Correo electronico">
+                <input type="email" [(ngModel)]='email' [ngModelOptions]="{standalone: true}" class="form-control" placeholder="Correo electronico">
                  
               </div>
               <div class="form-floating mb-3">
-                <input type="password" [(ngModel)]='clave' class="form-control"   placeholder="Contraseña" >
-                
+                <input type="password" [(ngModel)]='clave' [ngModelOptions]="{standalone: true}" class="form-control"   placeholder="Contraseña" >
               </div>
 
     
               <div class="d-grid">
-                <button class="btn btn-primary btn-login text-uppercase fw-bold" >Ingresar</button>
+                <button class="btn btn-primary btn-login text-uppercase fw-bold" (click)='ingresar()'>Ingresar</button>
               </div>
               <hr class="my-4">
               <div class="d-grid">
-                <button class="btn btn-facebook btn-login text-uppercase fw-bold" >
+                <button class="btn btn-facebook btn-login text-uppercase fw-bold" (click)='autocompletar()'>
                   <i class="fab fa-facebook-f me-2"></i> Autocompletar
                 </button>
               </div>
-    
+     
             </form>
- 
+            <div *ngIf='show_error'class="card text-white bg-danger" >
+              <div class="card-header">Error</div>
+              <div class="card-body"> 
+                <p class="card-text">
+                {{ descripcion_error }}
+                </p>
+              </div>
+              </div>
+
           </div>
         </div>
       </div>
